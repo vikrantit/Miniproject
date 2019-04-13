@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/greyish"
-    tools:context=".WelcomeActivity">
+    tools:context=".PostJob"
+    android:background="@color/greyish">
 
     <ImageView
         android:id="@+id/imageView"
@@ -37,52 +37,66 @@
                 android:inputType="textPersonName"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
-                android:text="Welcome"
-                android:textColor="@color/colorPrimary"
-                android:textSize="25dp"
+                android:hint="Job ID"
                 android:layout_gravity="center_horizontal"
                 />
 
+            <EditText
+                android:id="@+id/editText8"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_below="@id/editText7"
+                android:background="@drawable/edittextstyles"
+                android:ems="10"
+                android:hint="Job Title"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editText9"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/editText8"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittextstyles"
+                android:hint="Job Description" />
+
+            <EditText
+                android:id="@+id/editText10"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editText9"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittextstyles"
+                android:hint="No. of Hours"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editText11"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/editText10"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edittextstyles"
+                android:hint="Payment"
+                android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
-                android:layout_below="@id/editText7"
-                android:background="@drawable/buttonstyles"
-                android:text="Search"
-                android:onClick=""
-                android:textColor="@color/white"
-                android:textSize="20dp"></Button>
-
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="230dp"
-                android:layout_below="@id/button"
-                android:layout_height="wrap_content"
+                android:layout_below="@id/editText11"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/buttonstyles"
-                android:text="Post Job"
-                android:onClick=""
+                android:text="Post"
+                android:onClick="onSignupClick"
                 android:textColor="@color/white"
                 android:textSize="20dp"></Button>
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="230dp"
-                android:layout_below="@id/button1"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/buttonstyles"
-                android:text="Applied"
-                android:onClick=""
-                android:textColor="@color/white"
-                android:textSize="20dp"></Button>
-
 
 
 
@@ -90,5 +104,7 @@
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
+
+
 
 </RelativeLayout>

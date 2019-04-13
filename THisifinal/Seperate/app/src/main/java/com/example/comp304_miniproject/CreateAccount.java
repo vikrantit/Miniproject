@@ -41,7 +41,7 @@ public class CreateAccount extends AppCompatActivity {
             u.setPhoneno(phonenostr);
 
             helper.insertUser(u) ;
-            Toast.makeText(CreateAccount.this,"Inserted",Toast.LENGTH_SHORT).show();
+            Toast.makeText(CreateAccount.this,"User Added",Toast.LENGTH_SHORT).show();
 
 
         }
