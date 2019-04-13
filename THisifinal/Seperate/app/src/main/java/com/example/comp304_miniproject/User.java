@@ -1,6 +1,8 @@
 package com.example.comp304_miniproject;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     private int id;
     private String username;
@@ -18,8 +20,6 @@ public class User {
     public User(){
 
     }
-
-
 
 
 

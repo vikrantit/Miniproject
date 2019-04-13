@@ -31,9 +31,13 @@ public class MainActivity extends AppCompatActivity {
         String emailstr=email.getText().toString();
         String passstr=password.getText().toString();
 
-        String passreturn = helper.searchPass(emailstr);
-        if(passreturn.equals(passstr)){
+        User user = helper.searchPass(emailstr);
+
+        if(user.getPassword().equals(passstr)){
             Intent i= new Intent(MainActivity.this,WelcomeActivity.class);
+            i.putExtra("user",user);
+
+
             startActivity(i);
         }
         else{

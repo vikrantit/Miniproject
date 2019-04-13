@@ -26,10 +26,10 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
     private static final String COLOM_ID ="jobid";
     private static final String COLOM_TITLE ="jobtitle";
     private static final String COLOM_DESCRIPTION ="jobdesc";
-    private static final String COLOUMN_HOURS ="jobhours";
-    private static final String COLOUMN_PAYMENT ="jobpay";
-    private static final String COLOUMN_POSTID ="jobpostid";
-    private static final String COLOUMN_SEEKID ="jobseekid";
+    private static final String COLOM_HOURS ="jobhours";
+    private static final String COLOM_PAYMENT ="jobpay";
+    private static final String COLOM_POSTID ="jobpostid";
+    private static final String COLOM_SEEKID ="jobseekid";
 
 
 
@@ -40,7 +40,7 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
             "name text not null, email text not null , pass text not null ,phone text not null);";
 
     private static final String TABLE_CREATE2="create table job ( jobid integer not null, "+
-            "jobtitle text not null, jobdesc not null, jobhours integer not null, jobpay text not null, jobpostid integer not null, jobseekid integer primary key not null);";
+            "jobtitle text not null, jobdesc not null, jobhours integer not null, jobpay text not null, jobpostid integer primary key not null, jobseekid integer  not null);";
 
 
     public DatabaseHelper(Context context){
@@ -75,11 +75,34 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
         db.close();
     }
 
-    public String searchPass(String uname){
+    public void postjob(Job job,User user){
+        db=this.getWritableDatabase();
+
+        ContentValues values=new ContentValues();
+
+        String query= "select * from job";
+        Cursor cursor= db.rawQuery(query,null);
+
+        int count= cursor.getCount();
+
+        values.put(COLOM_ID,count);
+        values.put(COLOM_TITLE,job.getJobtitle());
+        values.put(COLOM_DESCRIPTION,job.getJobdesc());
+        values.put(COLOM_HOURS,job.getJobhours());
+        values.put(COLOM_PAYMENT,job.getJobpay());
+        values.put(COLOM_POSTID,user.getId());
+
+
+        db.insert("job",null,values);
+        db.close();
+    }
+
+    public User searchPass(String uname){
         db = this.getReadableDatabase();
         String query = "Select * from " +TABLE_NAME;
         Cursor cursor = db.rawQuery(query,null);
         String a,b;
+        User u=new User();
         b="not found";
 
         if(cursor.moveToFirst()){
@@ -91,14 +114,21 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
                 if (a.equals(uname))
                 {
                     b=cursor.getString(4);
+                    u.setId(cursor.getInt(1));
+                    u.setUsername(cursor.getString(2));
+                    u.setEmailid(cursor.getString(3));
+                    u.setPassword(cursor.getString(4));
+                    u.setPhoneno(cursor.getString(5));
+
                     break;
+
                 }
 
 
             }while(cursor.moveToNext());
         }
 
-        return b;
+        return u;
 
     }
 
