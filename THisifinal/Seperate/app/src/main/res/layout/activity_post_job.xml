@@ -29,7 +29,7 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:id="@+id/editText7"
+                android:id="@+id/editText14"
                 android:background="@drawable/edittextstyles"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
@@ -42,7 +42,7 @@
                 />
 
             <EditText
-                android:id="@+id/editText8"
+                android:id="@+id/editText15"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -54,7 +54,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editText9"
+                android:id="@+id/editText16"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -64,7 +64,7 @@
                 android:hint="Job Description" />
 
             <EditText
-                android:id="@+id/editText10"
+                android:id="@+id/editText17"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/editText9"
@@ -75,7 +75,7 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editText11"
+                android:id="@+id/editText18"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/editText10"
