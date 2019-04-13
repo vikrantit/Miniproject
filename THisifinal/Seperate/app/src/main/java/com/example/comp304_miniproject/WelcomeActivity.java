@@ -19,4 +19,8 @@ public class WelcomeActivity extends AppCompatActivity {
             //    and one for previous applied jobs
 
     }
+
+    public void postjob(){
+        
+    }
 }

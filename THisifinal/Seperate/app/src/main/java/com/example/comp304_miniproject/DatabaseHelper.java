@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper  extends SQLiteOpenHelper {
 
 
+    //for users
     private static final int DATABASE_VERSION =1;
     private static final String DATABASE_NAME= "user.db";
     private static final String TABLE_NAME= "user";
@@ -20,9 +21,26 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
     private static final String COLOUMN_PHONE ="phone";
     SQLiteDatabase db;
 
+    //for jobs
+
+    private static final String COLOM_ID ="jobid";
+    private static final String COLOM_TITLE ="jobtitle";
+    private static final String COLOM_DESCRIPTION ="jobdesc";
+    private static final String COLOUMN_HOURS ="jobhours";
+    private static final String COLOUMN_PAYMENT ="jobpay";
+    private static final String COLOUMN_POSTID ="jobpostid";
+    private static final String COLOUMN_SEEKID ="jobseekid";
+
+
+
+
+
 
     private static final String TABLE_CREATE= "create table user (id integer primary key not null , " +
             "name text not null, email text not null , pass text not null ,phone text not null);";
+
+    private static final String TABLE_CREATE2="create table job ( jobid integer not null, "+
+            "jobtitle text not null, jobdesc not null, jobhours integer not null, jobpay text not null, jobpostid integer not null, jobseekid integer primary key not null);";
 
 
     public DatabaseHelper(Context context){
@@ -33,6 +51,7 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(TABLE_CREATE);
+        db.execSQL(TABLE_CREATE2);
         this.db=db;
     }
 
@@ -87,7 +106,9 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         String query= "DROP TABLE IF EXISTS " + TABLE_NAME;
+        String query2= "DROP TABLE IF EXISTS job" ;
         db.execSQL(query);
+        db.execSQL(query2);
         this.onCreate(db);
     }
 
