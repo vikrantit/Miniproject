@@ -20,4 +20,8 @@ public class WelcomeActivity extends AppCompatActivity {
         //
 
     }
+
+    public void postjob(){
+        
+    }
 }
