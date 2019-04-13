@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".WelcomeActivity">
 
+<<<<<<< HEAD
+
+
+</android.support.constraint.ConstraintLayout>
+=======
     <ListView
         android:id="@+id/listallusers"
         android:layout_width="match_parent"
@@ -15,3 +20,4 @@
     </ListView>
 
 </RelativeLayout>
+>>>>>>> 3441b6c72f08388774e65996550fad11f30ff08b

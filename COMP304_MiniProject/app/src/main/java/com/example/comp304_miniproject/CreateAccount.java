@@ -38,12 +38,6 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.button3).setOnClickListener(this);
         findViewById(R.id.button4).setOnClickListener(this);
 
-
-
-
-
-
-
     }
 
     private void createTable() {
