@@ -16,19 +16,7 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
     EditText name,email,password,phoneno,address,zipcode;
 
 
-    private void createTable() {
-        String sql = "CREATE TABLE user (\n" +
-                "userID INTEGER PRIMARY KEY AUTOINCREMENT,\n" +
-                "name varchar(200),\n" +
-                "email_id varchar(200) ,\n" +
-                "password varchar(200), \n" +
-                "phoneno varchar(200) ,\n" +
-                "address varchar(200),\n" +
-                "postalcode varchar(200) \n" +
-                ");";
 
-        mdatabase.execSQL(sql);
-    }
 
 
     @Override
@@ -37,13 +25,8 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_create_account);
 
         mdatabase= openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE,null);
-        createTable();
+        //createTable();
 
-
-
-    }
-
-    private void addUser(){
 
         name= (EditText)findViewById(R.id.editText2);
         email=(EditText)findViewById(R.id.editText3);
@@ -57,6 +40,29 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
 
 
 
+
+
+
+
+    }
+
+    private void createTable() {
+
+
+        String sql="CREATE TABLE employees (\n" +
+                "    userID PRIMARY KEY AUTOINCREMENT,\n" +
+                "    name varchar(200) NOT NULL,\n" +
+                "    email_id varchar(200) NOT NULL,\n" +
+                "     password varchar(200) NOT NULL,\n" +
+                "      phoneno varchar(200) NOT NULL,\n" +
+                "   address varchar(200) NOT NULL,\n" +
+                "    postalcode varchar(200) NOT NULL\n" +
+                ");";
+
+        mdatabase.execSQL(sql);
+    }
+
+    private void addUser(){
 
         String name1=name.getText().toString().trim();
         String email1= email.getText().toString().trim();
@@ -99,6 +105,8 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
             return;
 
         }
+
+
 
         String sql="INSERT INTO user(name,email_id,password,phoneno,address,postalcode)"+
                 "VALUES (?,?,?,?,?,?)";
