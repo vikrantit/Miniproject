@@ -68,10 +68,5 @@ public class MainActivity extends AppCompatActivity {
        startActivity(intent);
 
     }
-    public void SendData1(View view)
-    {
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        startActivity(intent);
 
-    }
 }
