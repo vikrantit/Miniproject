@@ -20,11 +20,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void SendData(View view)
     {
-        //  EditText editText=findViewById(R.id.editText);
-        //  String message = editText.getText().toString();
+       Intent intent = new Intent(MainActivity.this, CreateAccount.class);
+       startActivity(intent);
 
-        Intent intent = new Intent(MainActivity.this, CreateAccount.class);
-        //  intent.putExtra("message",message);
+    }
+    public void SendData1(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
 
     }
