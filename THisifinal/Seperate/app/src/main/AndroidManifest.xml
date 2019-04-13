@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WelcomeActivity"></activity>
+        <activity android:name=".PostJob"></activity>
+        <activity android:name=".WelcomeActivity" />
         <activity android:name=".CreateAccount" />
         <activity android:name=".MainActivity">
             <intent-filter>
